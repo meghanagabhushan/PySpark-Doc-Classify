@@ -15,7 +15,7 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 app.config['SECRET_KEY'] = '7d441f27d441f27567d441f2b6176a'
 
-
+#This class validates the text field
 class ReusableForm(Form):
     name = TextField('Paste Document Contents here:', validators=[validators.required()])
 
@@ -35,19 +35,21 @@ def hello():
             sc.setLogLevel("ERROR")
 
             app = Flask(__name__)
-
+            #Schema of the trained data
             schema = StructType([
                 StructField("_c0", StringType()),
                 StructField("_c1", StringType())
             ])
+            #Schema for the input features
             predict_schema = StructType([StructField("_c1", StringType())])
 
+            #Load the Pipeline and the Classification Model
             pipelineModel = PipelineModel.load("pipeline_Model")
             lfModel = LogisticRegressionModel.load("lr_Model")
 
             spark = SparkSession.builder.getOrCreate()
             input_features = [[(name)]]
-
+            #Making predictions from the model
             predict_df = spark.createDataFrame(data=input_features,
                                                schema=predict_schema)
             transformed_pred_df = pipelineModel.transform(predict_df)
@@ -58,6 +60,7 @@ def hello():
             labels = pipelineModel.stages[-1].labels
             result_dict = {labels[i]: probs[i] for i in range(n_predictions)}
             #results = jsonify(result_dict)
+            #displaying the predictions
             flash(result_dict)
 
         else:
