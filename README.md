@@ -9,6 +9,8 @@ HeavyWater Coding Assignment<br>
 ##### Developed a RESTful service using Python's Flask framework<br>
   Code included in application.py<br>
 
+### Running the Rest Service Locally
+<img src="screenshot.PNG">
 
 ### Web Service
 Deployed the Web Service on Heroku -  https://doc-classify-heavywater.herokuapp.com/ <br>
