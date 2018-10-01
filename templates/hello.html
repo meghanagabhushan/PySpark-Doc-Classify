@@ -1,1 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title>Classification Demo</title>
+    </head>
+    <body>
+    <style>
+        .submit {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.input text{
+padding: 0;
+    height: 200px;
+    width:200px;
+    position: relative;
+    left: 0;
+    outline: none;
+    border: 1px solid #cdcdcd;
+    border-color: rgba(0,0,0,.15);
+    background-color: white;
+    font-size: 16px;
+}
+    </style>
 
+        <form action="" method="post">
+            {{ form.csrf }}
+
+            <div class="input text">
+                {{ form.name.label }} {{ form.name }}
+            </div>
+            <br>
+            <br>
+            <div class="input submit">
+                <input type="submit" value="Submit"  />
+            </div>
+        </form>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message[1] }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+    </body>
+</html>
