@@ -17,7 +17,7 @@ Deployed the Web Service on Heroku -  https://doc-classify-heavywater.herokuapp.
 [Facing problems with Spark while deploying on Heroku!]
 
 ### Execution Steps <br>
-./classification.py <br>
-./app.py <br>
+>python ./classification.py <br>
+>python ./app.py <br>
 run http://127.0.0.1:5000/ on your browser
 
