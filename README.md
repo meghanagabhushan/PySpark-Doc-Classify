@@ -4,12 +4,12 @@ HeavyWater Coding Assignment<br>
 ### Document Classification <br>
 ##### Developed a machine learning model using PySpark.<br>
   Code included in classification.py<br>
-##### Confusion Matrix for the Model: <br>
+  #####Model Accuracy = 83%
 
 ##### Developed a RESTful service using Python's Flask framework<br>
   Code included in application.py<br>
-<img src="">
+
 
 ### Web Service
-Deployed the Web Service on Heroku - 
-Facing problems with Spark!
+Deployed the Web Service on Heroku -  https://doc-classify-heavywater.herokuapp.com/
+Facing problems with Spark while deploying on Heroku!
